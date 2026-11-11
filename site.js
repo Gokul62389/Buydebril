@@ -3,6 +3,7 @@
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+if ($('.hero')) { // homepage only
 /* ---------- products (from the approved design; photos exported from Figma) ---------- */
 const P = {
   '59A': ['TJ 837', 'Black RG', 'Metal-TR combination'],
@@ -127,6 +128,7 @@ if (board) {
   };
   const kick = () => { measure(); raf ||= requestAnimationFrame(tick); };
   if (!reduced) { addEventListener('scroll', kick, { passive: true }); addEventListener('resize', kick); kick(); }
+}
 }
 
 /* ---------- menu drawer + search overlay ---------- */

@@ -36,7 +36,7 @@
     <nav aria-label="Main">
       <ul class="menu">
         <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="https://buydb.in/shop/">Shop</a></li>
+        <li><a href="shop.html">Shop</a></li>
         <li><a href="https://buydb.in/about-us/">About us</a></li>
         <li><a href="https://buydb.in/locate-us/">Find a store</a></li>
         <li><a href="https://buydb.in/contact-us/">Contact us</a></li>
@@ -46,20 +46,19 @@
   </div>
 </div>
 
-<!-- Search: drops down from under the header in navy, searches the live De Bril shop -->
+<!-- Search: drops down from under the header in navy, searches the shop page -->
 <div class="sheet sheet-t" id="search" hidden>
   <div class="sheet-bg" data-close></div>
   <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Search">
     <div class="srch">
-      <form action="https://buydb.in/" method="get" role="search">
+      <form action="shop.html" method="get" role="search">
         <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
         <label for="q" class="vh">Search frames</label>
-        <input id="q" name="s" type="search" placeholder="Search frames" autocomplete="off" enterkeyhint="search">
-        <input type="hidden" name="post_type" value="product">
+        <input id="q" name="q" type="search" placeholder="Search frames" autocomplete="off" enterkeyhint="search">
         <button class="ibtn x" type="button" data-close aria-label="Close search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
       </form>
       <p class="srch-k">Popular searches</p>
-      <ul class="srch-pop"><li><a href="https://buydb.in/?s=1003&amp;post_type=product">1003</a></li><li><a href="https://buydb.in/?s=Titanium&amp;post_type=product">Titanium</a></li><li><a href="https://buydb.in/?s=TJ+837&amp;post_type=product">TJ 837</a></li><li><a href="https://buydb.in/?s=Metal-TR&amp;post_type=product">Metal-TR</a></li><li><a href="https://buydb.in/?s=HD+acetate&amp;post_type=product">HD acetate</a></li><li><a href="https://buydb.in/?s=2-in-1&amp;post_type=product">2-in-1</a></li></ul>
+      <ul class="srch-pop"><li><a href="shop.html?q=1003">1003</a></li><li><a href="shop.html?q=Titanium">Titanium</a></li><li><a href="shop.html?q=TJ+837">TJ 837</a></li><li><a href="shop.html?q=Metal-TR">Metal-TR</a></li><li><a href="shop.html?q=HD+acetate">HD acetate</a></li><li><a href="shop.html?q=2-in-1">2-in-1</a></li></ul>
     </div>
   </div>
 </div>
@@ -73,32 +72,32 @@
       <button class="ibtn x" type="button" data-close aria-label="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
     </div>
     <ul class="g-list">
-      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=male">
+      <li><a class="g-tile" href="shop.html?gender=Men">
         <span class="g-n">01</span>
         <img class="g-ph" src="img/wearer-men.webp" alt="Man wearing black frames" width="900" height="1200" loading="lazy">
         <span class="g-name">Men</span>
         <span class="g-go">Men's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a></li>
-      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=female">
+      <li><a class="g-tile" href="shop.html?gender=Women">
         <span class="g-n">02</span>
         <img class="g-ph" src="img/wearer-women.webp" alt="Woman wearing black frames" width="900" height="1200" loading="lazy">
         <span class="g-name">Women</span>
         <span class="g-go">Women's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a></li>
-      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=child">
+      <li><a class="g-tile" href="shop.html?gender=Children">
         <span class="g-n">03</span>
         <img class="g-ph" src="img/wearer-kids.webp" alt="Boy wearing black frames" width="900" height="1200" loading="lazy">
         <span class="g-name">Children</span>
         <span class="g-go">Children's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a></li>
-      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=unisex">
+      <li><a class="g-tile" href="shop.html?gender=Unisex">
         <span class="g-n">04</span>
         <img class="g-ph" src="img/wearer-unisex.webp" alt="A woman and a man wearing frames" width="900" height="1200" loading="lazy">
         <span class="g-name">Unisex</span>
         <span class="g-go">Unisex frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a></li>
     </ul>
-    <a class="g-all ul" href="https://buydb.in/shop-2/">Or browse all frames</a>
+    <a class="g-all ul" href="shop.html">Or browse all frames</a>
   </div>
 </div>
 
@@ -108,7 +107,7 @@
 <section class="hero" aria-roledescription="carousel" aria-label="De Bril campaigns">
   <div class="slide is-on" aria-roledescription="slide" aria-label="1 of 4">
     <img src="img/hero.webp" alt="Woman with long braids wearing clear De Bril titanium frames" width="2880" height="1656" fetchpriority="high">
-    <div class="copy"><p class="k">New arrivals</p><h1 class="t">Pure titanium. Barely there.</h1><p>The 1003 — imported titanium frames, now at De Bril.</p><a class="btn btn-o" href="https://buydb.in/?s=1003&amp;post_type=product">Discover the 1003</a></div>
+    <div class="copy"><p class="k">New arrivals</p><h1 class="t">Pure titanium. Barely there.</h1><p>The 1003 — imported titanium frames, now at De Bril.</p><a class="btn btn-o" href="shop.html?q=1003">Discover the 1003</a></div>
   </div>
   <div class="slide" aria-roledescription="slide" aria-label="2 of 4" inert>
     <img src="img/premium.webp" alt="Woman in tortoiseshell cat-eye frames" width="1438" height="1800" loading="lazy" style="object-position:50% 25%">
@@ -116,11 +115,11 @@
   </div>
   <div class="slide" aria-roledescription="slide" aria-label="3 of 4" inert>
     <img src="img/best.webp" alt="Black and white portrait of a man in round frames" width="1438" height="1800" loading="lazy" style="object-position:50% 30%">
-    <div class="copy"><p class="k">The best sellers</p><h2 class="t">Frames chosen most often.</h2><p>The De Bril frames people come back for.</p><a class="btn btn-o" href="https://buydb.in/shop/">Shop now</a></div>
+    <div class="copy"><p class="k">The best sellers</p><h2 class="t">Frames chosen most often.</h2><p>The De Bril frames people come back for.</p><a class="btn btn-o" href="shop.html">Shop now</a></div>
   </div>
   <div class="slide" aria-roledescription="slide" aria-label="4 of 4" inert>
     <img src="img/still.webp" alt="Rose gold frames resting on linen" width="1440" height="1440" loading="lazy">
-    <div class="copy"><p class="k">Imported premium frames</p><h2 class="t">2-in-1, optical and sun.</h2><p>An optical frame with a magnetic sun attachment.</p><a class="btn btn-o" href="https://buydb.in/shop/">Discover 2-in-1</a></div>
+    <div class="copy"><p class="k">Imported premium frames</p><h2 class="t">2-in-1, optical and sun.</h2><p>An optical frame with a magnetic sun attachment.</p><a class="btn btn-o" href="shop.html?type=2-in-1">Discover 2-in-1</a></div>
   </div>
   <div class="hero-ui">
     <div class="dashes" role="tablist" aria-label="Choose a campaign">
@@ -140,20 +139,20 @@
     <p class="k">Category</p>
     <h2 id="board-h">Frames</h2>
     <p class="board-sub">89 frames, imported and selected for De Bril.</p>
-    <a class="btn btn-n" href="https://buydb.in/shop/">Explore all frames</a>
+    <a class="btn btn-n" href="shop.html">Explore all frames</a>
   </div>
   <p class="board-cap">Shown: 1003, black titanium</p>
 </section>
 
 <!-- 6 · Recently arrived -->
 <section class="prods" aria-labelledby="recent-h">
-  <div class="prods-head wrap"><h2 id="recent-h">Recently arrived</h2><a class="ul" href="https://buydb.in/shop/">View all</a></div>
+  <div class="prods-head wrap"><h2 id="recent-h">Recently arrived</h2><a class="ul" href="shop.html">View all</a></div>
   <ul class="grid" data-list="recent"></ul>
 </section>
 
 <!-- 7 · Mid banners -->
 <section class="duo">
-  <a class="banner" href="https://buydb.in/shop/">
+  <a class="banner" href="shop.html">
     <img src="img/best.webp" alt="Black and white portrait of a man in round frames" width="1438" height="1800" loading="lazy">
     <span class="banner-copy"><span class="k">The best sellers</span><span class="t">Frames chosen most often.</span><span class="ul">Shop now</span></span>
   </a>
@@ -179,7 +178,7 @@
     <button class="rail-btn" type="button" data-dir="-1" aria-label="Previous frames"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
     <button class="rail-btn" type="button" data-dir="1" aria-label="Next frames"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
   </div>
-  <p class="center"><a class="btn btn-n" href="https://buydb.in/shop/">View all</a></p>
+  <p class="center"><a class="btn btn-n" href="shop.html">View all</a></p>
 </section>
 
 <!-- 9 · Bottom banner -->
@@ -223,7 +222,7 @@
       <div><dt>Optical</dt><dd>Your prescription, every day</dd></div>
       <div><dt>Sun</dt><dd>Clips on magnetically</dd></div>
     </dl>
-    <a class="btn btn-n" href="https://buydb.in/shop/">Discover 2-in-1</a>
+    <a class="btn btn-n" href="shop.html?type=2-in-1">Discover 2-in-1</a>
   </div>
 </section>
 
@@ -268,7 +267,7 @@
     </div>
     <div class="foot-cols">
       <div><h3>Client services</h3><ul><li><a href="https://buydb.in/contact-us/">Contact us</a></li><li><a href="https://buydb.in/locate-us/">Find a store</a></li><li><a href="tel:+914843160620">+91 484 316 0620</a></li><li><a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a></li></ul></div>
-      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="https://buydb.in/about-us/">About us</a></li><li><a href="https://buydb.in/shop/">Shop</a></li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="https://buydb.in/about-us/">About us</a></li><li><a href="shop.html">Shop</a></li></ul></div>
       <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/">Facebook</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="https://www.youtube.com/">YouTube</a></li></ul></div>
       <div><h3>Bosym Pvt Ltd</h3><address>2nd Floor A6, Manglavil Apartments, near Dream Flower Velvetude, 1 Temple Road, Koonamthai, Edappally, Kochi 682024</address><ul><li><a href="https://www.bosymcorp.com/">www.bosymcorp.com</a></li></ul></div>
     </div>
