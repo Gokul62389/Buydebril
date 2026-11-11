@@ -81,6 +81,9 @@ address{font-style:normal}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s var(--ease),visibility 0s .9s}
 .slide.is-on{opacity:1;visibility:visible;transition:opacity .9s var(--ease)}
 .slide img{width:100%;height:100%;object-fit:cover}
+/* slow, constant zoom on every slide (runs behind the fades too, so a slide never jumps back to 1×) */
+.slide img{animation:drift 24s ease-in-out infinite alternate;will-change:transform}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.08)}}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,31,.7),rgba(0,0,0,0) 60%)}
 /* hero → billboard: the hero holds still and the billboard slides up over it like a curtain;
    the hero dims and settles back as it is covered (--p, 0→1, set in site.js) */
@@ -277,5 +280,6 @@ main>section:not(.hero){position:relative;z-index:1;background:#fff}
   .hero{position:relative;top:auto}
   .board-copy>*,.board>img{opacity:1!important;transform:none!important}
   .board-copy{margin-top:0!important}
+  .slide img{animation:none!important}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
