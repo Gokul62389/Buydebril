@@ -214,17 +214,21 @@ main>section.tryon{background:radial-gradient(70% 90% at 72% 40%,#f3f1ec,#e7e4de
 .vf-sw i{width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
 .vf-sw i:first-child{box-shadow:0 0 0 2px #fff,0 0 0 3px var(--navy)}
 
-/* 5 + 9 · split sections */
-.split{display:grid;grid-template-columns:1fr 1fr}
-.split-media{position:relative;overflow:hidden}
-.split-media img{width:100%;height:100%;object-fit:cover}
-.stone{background:var(--stone)}
-.navy{background:var(--navy);color:#fff}
-.split-copy{display:grid;place-content:center;justify-items:center;text-align:center;gap:10px;padding:64px var(--pad)}
-.split-copy .k,.split-copy p{color:var(--mist)}
-.split-copy p:not(.k){font-size:16px;max-width:430px;margin-bottom:32px}
-.bottom .split-media{aspect-ratio:1}
-.gold-rule{display:block;width:40px;height:1px;background:var(--gold);margin:6px 0 10px}
+/* 9 · 2-in-1: mirrors the try-on billboard above (visual left, display type right) on white */
+.twoin{display:grid;grid-template-columns:7fr 5fr;align-items:center}
+.twoin-media{aspect-ratio:4/3;overflow:hidden}
+.twoin-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.twoin:hover .twoin-media img{transform:scale(1.03)}
+.twoin-copy{display:grid;justify-items:start;gap:6px;padding:56px var(--pad) 56px clamp(32px,5vw,80px);max-width:560px}
+.twoin .k{color:var(--grey);display:flex;align-items:center;gap:12px}
+.twoin .k::before{content:"";width:32px;height:1px;background:var(--gold)}
+.twoin h2{font-weight:500;font-size:clamp(64px,9.2vw,148px);line-height:.9;letter-spacing:-.045em;margin:6px 0 14px -.04em;color:var(--navy)}
+.twoin-sub{font-size:clamp(16px,1.25vw,18px);color:var(--grey)}
+.twoin-spec{display:grid;grid-template-columns:1fr 1fr;width:100%;margin:28px 0 32px;border-top:1px solid var(--line)}
+.twoin-spec div{padding:16px 16px 0 0}
+.twoin-spec div+div{padding-left:16px;border-left:1px solid var(--line)}
+.twoin-spec dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.twoin-spec dd{margin:0;font-size:14px;color:var(--navy)}
 
 /* 5 · category billboard */
 .board{position:relative;overflow:hidden;background:#e7e4de!important;aspect-ratio:16/9;max-height:880px;width:100%}
@@ -350,7 +354,8 @@ main>section.tryon{background:radial-gradient(70% 90% at 72% 40%,#f3f1ec,#e7e4de
   .hero{height:auto;max-height:none;aspect-ratio:3/4.4;min-height:0}
   .hero-ui{left:var(--pad);right:auto;bottom:20px}
   .slide .copy{bottom:72px}
-  .split,.duo{grid-template-columns:1fr}
+  .twoin,.duo{grid-template-columns:1fr}
+  .twoin-copy{padding:40px var(--pad) 56px}
   .tryon{aspect-ratio:auto;max-height:none;display:grid;justify-items:center}
   .tryon-copy{position:static;transform:none;padding:48px var(--pad) 8px;max-width:none;justify-self:stretch}
   .tryon-stage{--w:220px;position:relative;right:auto;top:auto;transform:rotate(-3deg);margin:40px 0 56px}
@@ -361,7 +366,6 @@ main>section.tryon{background:radial-gradient(70% 90% at 72% 40%,#f3f1ec,#e7e4de
   .board-copy{margin-top:0}
   .board-copy{position:static;transform:none;padding:48px var(--pad) 8px;max-width:none}
   .board-cap{position:static;order:3;padding:12px var(--pad) 20px}
-  .bottom .split-copy{order:2}
   .prods{padding-top:64px}
   .prods-head{margin-bottom:28px}
   .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}
