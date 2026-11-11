@@ -148,6 +148,72 @@ main>section:not(.hero){position:relative;z-index:1;background:#fff}
 .count{font-size:13px;font-variant-numeric:tabular-nums}
 .count b{font-weight:400}
 
+/* virtual try-on billboard: same stone backdrop, navy display type and outline button as the Frames
+   billboard; a phone showing the camera view stands on the right with UI cards floating beside it */
+main>section.tryon{background:radial-gradient(70% 90% at 72% 40%,#f3f1ec,#e7e4de 55%,#d9d5cd)}
+.tryon{position:relative;overflow:hidden;aspect-ratio:16/9;max-height:880px;width:100%;color:var(--navy)}
+.tryon-copy{position:absolute;z-index:2;left:var(--pad);top:50%;transform:translateY(-50%);display:grid;justify-items:start;gap:6px;max-width:460px}
+.tryon .k{color:var(--grey);display:flex;align-items:center;gap:12px}
+.tryon .k .new{padding:3px 10px;border-radius:999px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.tryon h2{font-weight:500;font-size:clamp(64px,9.2vw,148px);line-height:.9;letter-spacing:-.045em;margin:6px 0 14px -.04em}
+.tryon-sub{font-size:clamp(16px,1.25vw,18px);color:var(--grey);margin-bottom:28px;max-width:400px}
+.tryon-cap{position:absolute;z-index:2;left:var(--pad);bottom:clamp(20px,2.4vw,36px);font-size:12px;letter-spacing:.02em;color:var(--grey)}
+.tryon-stage{--w:clamp(160px,20vw,320px);position:absolute;right:clamp(56px,13vw,220px);top:50%;width:var(--w);transform:translateY(-50%) rotate(-4deg)}
+/* soft studio floor shadow under the phone */
+.tryon-stage::after{content:"";position:absolute;left:8%;right:-6%;bottom:-7%;height:9%;z-index:-1;background:radial-gradient(closest-side,rgba(5,10,31,.35),transparent);filter:blur(6px)}
+/* iPhone 17 Pro, Deep Blue: 71.9 × 150 mm body; every size is a share of the phone's width (--w) */
+.iph{position:relative;aspect-ratio:71.9/150;padding:calc(var(--w)*.013);border-radius:calc(var(--w)*.165);
+  background:linear-gradient(90deg,#1c2a4a,#56698f 3%,#24345a 7%,#2c3d66 50%,#24345a 93%,#56698f 97%,#1c2a4a);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 1px rgba(255,255,255,.35),30px 44px 70px rgba(5,10,31,.35),8px 12px 20px rgba(5,10,31,.2)}
+.iph-in{height:100%;padding:calc(var(--w)*.03);border-radius:calc(var(--w)*.152);background:#05060a;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.vf{position:relative;height:100%;border-radius:calc(var(--w)*.124);overflow:hidden;background:#000}
+.iph-island{position:absolute;z-index:4;top:calc(var(--w)*.03);left:50%;translate:-50% 0;width:calc(var(--w)*.3);height:calc(var(--w)*.088);border-radius:999px;background:#000}
+.iph-glare{position:absolute;inset:0;z-index:5;border-radius:inherit;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.16),rgba(255,255,255,.04) 26%,rgba(255,255,255,0) 42%)}
+/* side buttons: Action + volume on the left, side button + Camera Control on the right */
+.ib{position:absolute;width:calc(var(--w)*.014);border-radius:2px;background:linear-gradient(90deg,#1c2a4a,#4d6088,#24345a)}
+.ib-act,.ib-up,.ib-dn{left:calc(var(--w)*-.011)}
+.ib-act{top:17%;height:5.5%}.ib-up{top:25%;height:9.5%}.ib-dn{top:36.5%;height:9.5%}
+.ib-pwr,.ib-cam{right:calc(var(--w)*-.011)}
+.ib-pwr{top:27%;height:14%}
+.ib-cam{top:56%;height:8%;background:linear-gradient(90deg,#24345a,#0c1222 40%,#3b4c74)}
+/* status bar either side of the Dynamic Island */
+.vf-status{position:absolute;z-index:3;top:calc(var(--w)*.045);left:calc(var(--w)*.09);right:calc(var(--w)*.075);display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:calc(var(--w)*.05);line-height:1}
+.vf-status b{font-weight:600}
+.vf-sys{display:flex;align-items:center;gap:calc(var(--w)*.014)}
+.vf-sys svg{height:calc(var(--w)*.034);width:auto;fill:#fff}
+.bat{position:relative;width:calc(var(--w)*.072);height:calc(var(--w)*.034);border-radius:calc(var(--w)*.01);border:1px solid rgba(255,255,255,.5);padding:1px}
+.bat i{display:block;height:100%;width:80%;border-radius:1px;background:#fff}
+.vf>img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.vf::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,31,.75),rgba(5,10,31,0) 32%)}
+.vf-live{position:absolute;z-index:2;top:calc(var(--w)*.16);left:calc(var(--w)*.06);display:flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;background:rgba(5,10,31,.55);backdrop-filter:blur(8px);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.vf-live i{width:7px;height:7px;border-radius:50%;background:#e5484d;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.vf-box{position:absolute;z-index:2;left:18%;right:18%;top:15%;height:28%}
+.vf-box i{position:absolute;width:24px;height:24px;border:2px solid var(--gold)}
+.vf-box i:nth-child(1){top:0;left:0;border-width:2px 0 0 2px;border-radius:8px 0 0 0}
+.vf-box i:nth-child(2){top:0;right:0;border-width:2px 2px 0 0;border-radius:0 8px 0 0}
+.vf-box i:nth-child(3){bottom:0;left:0;border-width:0 0 2px 2px;border-radius:0 0 0 8px}
+.vf-box i:nth-child(4){bottom:0;right:0;border-width:0 2px 2px 0;border-radius:0 0 8px 0}
+.vf-scan{position:absolute;z-index:2;left:18%;right:18%;top:15%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);box-shadow:0 0 18px var(--gold);animation:scan 3.2s ease-in-out infinite alternate}
+@keyframes scan{to{top:43%}}
+.vf-bar{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;display:grid;gap:10px;padding:12px 14px;border-radius:16px;background:rgba(11,26,69,.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);font-size:14px;color:#fff}
+.vf-bar p{display:grid;gap:2px}
+.vf-bar small{font-size:10px;color:var(--mist);letter-spacing:.1em;text-transform:uppercase}
+/* floating UI cards, white glass on the stone backdrop */
+.fl{position:absolute;z-index:3;display:grid;gap:10px;justify-items:start;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);box-shadow:0 20px 40px rgba(5,10,31,.14);transform:rotate(4deg);animation:float 6s ease-in-out infinite}
+.fl small{font-size:10px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase}
+.fl-colour{left:calc(100% - 30px);top:58%;animation-delay:-3s}
+@keyframes float{50%{translate:0 -10px}}
+.vf-chips{display:flex;gap:5px;overflow:hidden}
+.vf{container-type:inline-size}
+@container (max-width:280px){.vf-chips li:nth-child(n+3){display:none}.vf-bar{font-size:13px}}
+@container (max-width:200px){.vf-chips li:nth-child(n+2){display:none}}
+.vf-chips li{padding:5px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.28);font-size:11px;white-space:nowrap}
+.vf-chips .on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.vf-sw{display:flex;gap:8px}
+.vf-sw i{width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.vf-sw i:first-child{box-shadow:0 0 0 2px #fff,0 0 0 3px var(--navy)}
+
 /* 5 + 9 · split sections */
 .split{display:grid;grid-template-columns:1fr 1fr}
 .split-media{position:relative;overflow:hidden}
@@ -285,6 +351,11 @@ main>section:not(.hero){position:relative;z-index:1;background:#fff}
   .hero-ui{left:var(--pad);right:auto;bottom:20px}
   .slide .copy{bottom:72px}
   .split,.duo{grid-template-columns:1fr}
+  .tryon{aspect-ratio:auto;max-height:none;display:grid;justify-items:center}
+  .tryon-copy{position:static;transform:none;padding:48px var(--pad) 8px;max-width:none;justify-self:stretch}
+  .tryon-stage{--w:220px;position:relative;right:auto;top:auto;transform:rotate(-3deg);margin:40px 0 56px}
+  .fl-colour{left:auto;right:-56px;top:24%}
+  .tryon-cap{position:static;justify-self:start;padding:0 var(--pad) 20px}
   .board{aspect-ratio:auto;max-height:none;display:grid}
   .board>img{position:static;aspect-ratio:4/3;object-position:100% 55%;order:2;transform:none}
   .board-copy{margin-top:0}
@@ -317,6 +388,7 @@ main>section:not(.hero){position:relative;z-index:1;background:#fff}
   .board-copy>*,.board>img{opacity:1!important;transform:none!important}
   .board-copy{margin-top:0!important}
   .slide img{animation:none!important}
+  .vf-scan,.vf-live i,.fl{animation:none!important}
   .g-ph{clip-path:none!important}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
