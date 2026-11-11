@@ -64,6 +64,44 @@
   </div>
 </div>
 
+<!-- Shop by wearer (photos are the CAV placeholders, swap for De Bril shots): opened from the Premium frames banner; each tile goes to the shop filtered by gender -->
+<div class="sheet sheet-c" id="gender" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="gender-h">
+    <div class="g-head">
+      <div><p class="k">Premium frames</p><h2 id="gender-h">Who are you choosing for?</h2></div>
+      <button class="ibtn x" type="button" data-close aria-label="Close"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+    </div>
+    <ul class="g-list">
+      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=male">
+        <span class="g-n">01</span>
+        <img class="g-ph" src="img/wearer-men.webp" alt="Man wearing black frames" width="900" height="1200" loading="lazy">
+        <span class="g-name">Men</span>
+        <span class="g-go">Men's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a></li>
+      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=female">
+        <span class="g-n">02</span>
+        <img class="g-ph" src="img/wearer-women.webp" alt="Woman wearing black frames" width="900" height="1200" loading="lazy">
+        <span class="g-name">Women</span>
+        <span class="g-go">Women's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a></li>
+      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=child">
+        <span class="g-n">03</span>
+        <img class="g-ph" src="img/wearer-kids.webp" alt="Boy wearing black frames" width="900" height="1200" loading="lazy">
+        <span class="g-name">Children</span>
+        <span class="g-go">Children's frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a></li>
+      <li><a class="g-tile" href="https://buydb.in/shop-2/?filter_gender=unisex">
+        <span class="g-n">04</span>
+        <img class="g-ph" src="img/wearer-unisex.webp" alt="A woman and a man wearing frames" width="900" height="1200" loading="lazy">
+        <span class="g-name">Unisex</span>
+        <span class="g-go">Unisex frames <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a></li>
+    </ul>
+    <a class="g-all ul" href="https://buydb.in/shop-2/">Or browse all frames</a>
+  </div>
+</div>
+
 <main id="main">
 
 <!-- 3 · Hero campaign slider -->
@@ -119,10 +157,10 @@
     <img src="img/best.webp" alt="Black and white portrait of a man in round frames" width="1438" height="1800" loading="lazy">
     <span class="banner-copy"><span class="k">The best sellers</span><span class="t">Frames chosen most often.</span><span class="ul">Shop now</span></span>
   </a>
-  <a class="banner" href="https://buydb.in/shop/">
+  <button class="banner" type="button" data-open="gender" aria-controls="gender" aria-expanded="false" aria-haspopup="dialog">
     <img src="img/premium.webp" alt="Woman in tortoiseshell cat-eye frames" width="1438" height="1800" loading="lazy">
     <span class="banner-copy"><span class="k">Premium frames</span><span class="t">Find the frame that is yours.</span><span class="ul">Explore more</span></span>
-  </a>
+  </button>
 </section>
 
 <!-- 8 · Explore the collection (tabs) -->

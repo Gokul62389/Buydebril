@@ -153,4 +153,11 @@ $$('.sheet').forEach(s => {
     else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); }
   });
 });
+
+/* shop-by-wearer tiles: arrow keys move between them */
+const tiles = $$('.g-tile');
+tiles.forEach((t, i) => t.addEventListener('keydown', e => {
+  const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+  if (d) { e.preventDefault(); tiles[(i + d + tiles.length) % tiles.length].focus(); }
+}));
 })();
