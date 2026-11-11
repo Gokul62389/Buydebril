@@ -476,14 +476,14 @@ main>section.ab-mats{background:var(--navy)}
 
 /* 17 · find a stockist — homepage language: photo billboard, navy tiles, white results */
 main>section.loc-hero{background:var(--deep)}
-.loc-hero{position:relative;height:clamp(560px,52vw,760px);max-height:calc(100svh - 72px);min-height:520px;overflow:hidden;color:#fff}
-.loc-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 30%;animation:drift 14s linear both}
-.loc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,10,31,.88),rgba(5,10,31,.55) 45%,rgba(5,10,31,0) 75%),linear-gradient(to top,rgba(5,10,31,.6),rgba(5,10,31,0) 50%)}
-.loc-hero-copy{position:absolute;z-index:2;left:var(--pad);bottom:clamp(40px,6vw,88px);width:min(560px,calc(100% - 2*var(--pad)));display:grid;gap:10px;justify-items:start}
-.loc-hero .k,.loc-dist .k{color:var(--gold);display:flex;align-items:center;gap:12px}
-.loc-hero .k::before,.loc-dist .k::before{content:"";width:32px;height:1px;background:currentColor}
-.loc-hero h1{font-weight:500;font-size:clamp(48px,6.6vw,104px);line-height:.92;letter-spacing:-.045em;margin:6px 0 8px -.04em}
-.loc-sub{font-size:clamp(15px,1.2vw,17px);line-height:1.6;color:var(--mist);max-width:460px;margin-bottom:18px}
+.loc-hero{position:relative;overflow:hidden;color:#fff;isolation:isolate}
+.loc-hero>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:70% 30%;animation:drift 14s linear both}
+.loc-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,10,31,.88),rgba(5,10,31,.55) 45%,rgba(5,10,31,0) 75%),linear-gradient(to top,rgba(5,10,31,.6),rgba(5,10,31,0) 50%)}
+.loc-hero-copy{display:grid;gap:8px;justify-items:start;padding:clamp(36px,4vw,56px) var(--pad) clamp(28px,3vw,40px);max-width:calc(620px + 2*var(--pad))}
+.loc-hero .k{color:var(--gold);display:flex;align-items:center;gap:12px}
+.loc-hero .k::before{content:"";width:32px;height:1px;background:currentColor}
+.loc-hero h1{font-weight:500;font-size:clamp(36px,4.2vw,64px);line-height:1;letter-spacing:-.04em;margin:4px 0 2px -.03em}
+.loc-sub{font-size:15px;line-height:1.55;color:var(--mist);max-width:480px;margin-bottom:12px}
 .loc-q{display:flex;align-items:center;gap:12px;width:100%;height:60px;padding:0 6px 0 20px;background:#fff;color:var(--navy);box-shadow:0 20px 40px rgba(0,0,0,.25)}
 .loc-q>svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--navy);stroke-width:1.5;stroke-linecap:round}
 .loc-q input{flex:1;min-width:0;height:100%;border:0;background:none;font:inherit;font-size:16px;color:var(--navy)}
@@ -492,20 +492,14 @@ main>section.loc-hero{background:var(--deep)}
 .loc-q-go{width:48px;height:48px;display:grid;place-items:center;background:var(--navy);color:#fff;transition:background-color .25s,color .25s}
 .loc-q-go:hover{background:var(--gold);color:var(--navy)}
 .loc-q-go svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5}
-main>section.loc-dist{background:var(--navy)}
-.loc-dist{padding:clamp(64px,7vw,104px) var(--pad);color:#fff}
-.loc-dist-head{margin-bottom:clamp(28px,3vw,44px)}
-.loc-dist-head h2{margin-top:10px;font-size:clamp(28px,3.2vw,48px);font-weight:400;letter-spacing:-.03em;line-height:1.1}
-.dtiles{display:grid;grid-template-columns:repeat(8,1fr);gap:2px}
-.dtiles button{position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:28px;min-height:200px;padding:18px 18px 20px;text-align:left;background:rgba(255,255,255,.05);overflow:hidden;isolation:isolate;transition:color .4s}
-.dtiles button::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gold);transform:translateY(101%);transition:transform .55s var(--ease)}
-.dtiles button:hover::before,.dtiles button:focus-visible::before,.dtiles button[aria-pressed=true]::before{transform:none}
-.dtiles button:hover,.dtiles button:focus-visible,.dtiles button[aria-pressed=true]{color:var(--navy);outline:none}
-.dt-n{font-size:12px;letter-spacing:.08em;opacity:.6}
-.dt-name{align-self:end;font-size:clamp(17px,1.35vw,22px);letter-spacing:-.01em;line-height:1.15;hyphens:manual}
-.dt-c{display:flex;align-items:center;justify-content:space-between;font-size:13px;opacity:.75}
-.dt-c b{font-weight:500;font-size:clamp(28px,2.4vw,40px);letter-spacing:-.03em;opacity:1;line-height:1}
-.loc-res{padding-top:clamp(56px,6vw,96px);scroll-margin-top:24px}
+/* district chips under the search, glass on the photo */
+.dchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.dchips button{height:36px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);font-size:13px;color:#fff;transition:background-color .25s,color .25s,border-color .25s}
+.dchips button span{margin-left:3px;opacity:.6;font-size:12px}
+.dchips button:hover{border-color:#fff}
+.dchips button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.dchips button[aria-pressed=true] span{opacity:.8}
+.loc-res{padding-top:clamp(24px,2.4vw,36px);scroll-margin-top:72px}
 .loc-res-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:0 var(--pad) 20px;border-bottom:1px solid var(--line)}
 .loc-res-head h2{font-size:clamp(26px,2.6vw,40px);font-weight:500;letter-spacing:-.03em;color:var(--navy)}
 .scount{font-size:14px;color:var(--grey)}
@@ -534,15 +528,16 @@ main>section.loc-dist{background:var(--navy)}
 .smap-cap a{color:var(--gold);font-weight:500}
 .smap-cap:empty{display:none}
 .loc-help{border-top:1px solid var(--line)}
-@media (max-width:1200px){.dtiles{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:900px){
   .loc-body{grid-template-columns:1fr}
   .loc-map{position:relative;top:auto;height:300px;order:-1}
   .sg h2{top:60px}
-  .loc-hero{height:auto;min-height:0;aspect-ratio:3/4.2;max-height:none}
   .loc-hero::after{background:linear-gradient(to top,rgba(5,10,31,.92),rgba(5,10,31,.5) 55%,rgba(5,10,31,.1))}
-  .dtiles{grid-template-columns:repeat(2,1fr)}
-  .dtiles button{min-height:150px;gap:16px}
+  .dchips{flex-wrap:nowrap;overflow-x:auto;width:calc(100% + var(--pad));padding-right:var(--pad);scrollbar-width:none}
+  .dchips button{flex:none}
+}
+@media (max-width:767px){
+  .loc-map{display:none} /* phones: the list comes first; each card has its own Directions link */
 }
 
 /* 14 · WhatsApp */

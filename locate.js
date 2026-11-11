@@ -51,7 +51,8 @@ list.addEventListener('click', e => {
   const c = e.target.closest('.st');
   if (c && !e.target.closest('a')) show(+c.dataset.i);
 });
-const toResults = () => $('#results').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+// results sit right under the band; scroll only if they're off-screen (phones)
+const toResults = () => { if ($('#results').getBoundingClientRect().top > innerHeight * .7) $('#results').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); };
 pills.addEventListener('click', e => { const b = e.target.closest('[data-d]'); if (b) { dist = b.dataset.d; render(); toResults(); } });
 q.addEventListener('input', render);
 $('#sq-form').addEventListener('submit', e => { e.preventDefault(); render(); toResults(); });
@@ -60,8 +61,8 @@ $('#sreset').addEventListener('click', () => { q.value = ''; dist = ''; render()
 fetch('stores.json').then(r => r.json()).then(d => {
   ALL = d;
   const n = {}; d.forEach(s => { n[s.d] = (n[s.d] || 0) + 1; });
-  const tile = (k, label, c, i) => `<button type="button" data-d="${esc(k)}" aria-pressed="false"><span class="dt-n">${String(i).padStart(2, '0')}</span><span class="dt-name">${esc(label).replace('Pathanamthitta', 'Pathanam&shy;thitta').replace('Thiruvananthapuram', 'Thiruvanantha&shy;puram')}</span><span class="dt-c"><b>${c}</b>opticians</span></button>`;
-  pills.innerHTML = tile('', 'All of Kerala', d.length, 0) + Object.keys(n).sort().map((k, i) => tile(k, k, n[k], i + 1)).join('');
+  const chip = (k, label, c) => `<button type="button" data-d="${esc(k)}" aria-pressed="false">${esc(label)} <span>${c}</span></button>`;
+  pills.innerHTML = chip('', 'All', d.length) + Object.keys(n).sort().map(k => chip(k, k, n[k])).join('');
   const u = new URLSearchParams(location.search);
   q.value = u.get('q') || '';
   dist = n[u.get('district')] ? u.get('district') : '';
