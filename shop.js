@@ -93,6 +93,13 @@ const render = (keep) => {
     + (act.length > 1 ? '<button class="chip-clear" type="button" data-rm="all">Clear all</button>' : '');
   $('#fcount').textContent = act.length ? `(${act.length})` : '';
   $('#shop-h').textContent = st.gender ? `${st.gender === 'Unisex' ? 'Unisex' : st.gender + '’s'} frames` : 'All frames';
+  // header photo follows the wearer (photos are placeholders until De Bril shoots its own)
+  const src = { Men: 'img/wearer-men.webp', Women: 'img/wearer-women.webp', Children: 'img/wearer-kids.webp', Unisex: 'img/wearer-unisex.webp' }[st.gender] || 'img/frames-studio.webp';
+  const hi = $('.shop-head-img');
+  if (!hi.src.endsWith(src)) {
+    hi.classList.add('is-out');
+    setTimeout(() => { hi.src = src; hi.classList.toggle('is-person', !!st.gender); hi.onload = () => hi.classList.remove('is-out'); }, 250);
+  }
   facets(); write();
 };
 
