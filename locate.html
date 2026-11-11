@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a store · De Bril</title>
+<meta name="description" content="87 opticians across Kerala stock De Bril frames. Find one near you, with addresses, phone numbers and directions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="img/logo-navy.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- 2 · Header: Menu on the left, logo centred, utilities on the right ending in a search icon -->
+<header class="head">
+  <div class="head-l">
+    <button class="hbtn" type="button" data-open="menu" aria-controls="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg><span>Menu</span></button>
+  </div>
+  <a class="logo" href="index.html" aria-label="De Bril, home"><img src="img/logo-gold-word.png" alt="De Bril" width="104" height="19"></a>
+  <nav class="head-r" aria-label="Quick links">
+    <a class="hlink" href="locate.html" aria-label="Find a store"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 17.5s5.5-5 5.5-9.2a5.5 5.5 0 0 0-11 0c0 4.2 5.5 9.2 5.5 9.2Z"/><circle cx="10" cy="8.3" r="1.9"/></svg><span>Find a store</span></a>
+    <a class="hlink hide-s" href="https://buydb.in/contact-us/">Contact us</a>
+    <button class="ibtn" type="button" data-open="search" aria-controls="search" aria-expanded="false" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg></button>
+  </nav>
+</header>
+
+<!-- Menu drawer -->
+<div class="sheet sheet-l" id="menu" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="hbtn x" type="button" data-close><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg><span>Close</span></button>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="locate.html" aria-current="page">Find a store</a></li>
+        <li><a href="https://buydb.in/contact-us/">Contact us</a></li>
+      </ul>
+    </nav>
+    <p class="sheet-meta">+91 484 316 0620<br>main@bosymcorp.com</p>
+  </div>
+</div>
+
+<!-- Search: drops down from under the header in navy, searches the shop page -->
+<div class="sheet sheet-t" id="search" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="srch">
+      <form action="shop.html" method="get" role="search">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
+        <label for="q" class="vh">Search frames</label>
+        <input id="q" name="q" type="search" placeholder="Search frames" autocomplete="off" enterkeyhint="search">
+        <button class="ibtn x" type="button" data-close aria-label="Close search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+      </form>
+      <p class="srch-k">Popular searches</p>
+      <ul class="srch-pop"><li><a href="shop.html?q=1003">1003</a></li><li><a href="shop.html?q=Titanium">Titanium</a></li><li><a href="shop.html?q=TJ+837">TJ 837</a></li><li><a href="shop.html?q=Metal-TR">Metal-TR</a></li><li><a href="shop.html?q=HD+acetate">HD acetate</a></li><li><a href="shop.html?q=2-in-1">2-in-1</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="loc-page">
+
+<!-- 1 · Billboard, same language as the homepage hero: full-bleed photo, copy bottom-left, search built in -->
+<section class="loc-hero" aria-labelledby="loc-h">
+  <img src="img/hero.webp" alt="" width="2880" height="1656" fetchpriority="high">
+  <div class="loc-hero-copy">
+    <p class="k">Find a stockist</p>
+    <h1 id="loc-h">Find De Bril near&nbsp;you.</h1>
+    <p class="loc-sub">87 opticians across Kerala stock De Bril frames. Search your town, then call ahead to check the frame you want is in.</p>
+    <form class="loc-q" id="sq-form" role="search">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
+      <label for="sq" class="vh">Search opticians</label>
+      <input id="sq" type="search" placeholder="Town, district or optician" autocomplete="off" enterkeyhint="search">
+      <button class="loc-q-go" type="submit" aria-label="Search"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<!-- 2 · Districts as tiles, like the shop-by-wearer popup: hover fills gold -->
+<section class="loc-dist" aria-labelledby="dist-h">
+  <div class="loc-dist-head">
+    <p class="k">By district</p>
+    <h2 id="dist-h">7 districts. Pick yours.</h2>
+  </div>
+  <div class="dtiles" id="dpills" role="group" aria-label="District"></div>
+</section>
+
+<!-- 3 · Results: list on the left, map on the right -->
+<section class="loc-res" id="results" aria-labelledby="res-h">
+  <div class="loc-res-head">
+    <h2 id="res-h">All opticians</h2>
+    <p class="scount" id="scount" aria-live="polite">Loading…</p>
+  </div>
+  <div class="loc-body">
+    <div class="loc-list">
+      <ul id="slist"></ul>
+      <div class="empty" id="sempty" hidden>
+        <h2>No opticians match</h2>
+        <p>Try a nearby town or district, or ask us on WhatsApp and we will point you to the closest one.</p>
+        <button class="btn btn-n" type="button" id="sreset">Show all opticians</button>
+      </div>
+    </div>
+    <div class="loc-map">
+      <iframe id="smap" title="Map of the selected optician" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="smap-cap" id="smap-cap"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · Help, mirrors the homepage 2-in-1 layout -->
+<section class="twoin loc-help" aria-labelledby="help-h">
+  <div class="twoin-media"><img src="img/frames-studio.webp" alt="De Bril 1003 frame in black titanium on a navy stone slab" width="2400" height="1340" loading="lazy" style="object-position:70% 50%"></div>
+  <div class="twoin-copy">
+    <p class="k">Not sure where to go?</p>
+    <h2 id="help-h">Ask&nbsp;us.</h2>
+    <p class="twoin-sub">Tell us your town and the frame you like. We will point you to the nearest optician that has it.</p>
+    <div class="ab-ctas"><a class="btn btn-n" href="https://wa.me/914843160620?text=Hello%2C%20which%20optician%20near%20me%20stocks%20De%20Bril%3F" target="_blank" rel="noopener">Ask on WhatsApp</a><a class="ul" href="shop.html">Browse frames first</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- 11 · Footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div><h2>Client services</h2><p>Speak to us on <a href="tel:+914843160620">+91 484 316 0620</a>, or write to <a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a>.</p></div>
+      <a class="btn btn-sq" href="locate.html">Find a store</a>
+    </div>
+    <div class="foot-cols">
+      <div><h3>Client services</h3><ul><li><a href="https://buydb.in/contact-us/">Contact us</a></li><li><a href="locate.html">Find a store</a></li><li><a href="tel:+914843160620">+91 484 316 0620</a></li><li><a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a></li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+      <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/">Facebook</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="https://www.youtube.com/">YouTube</a></li></ul></div>
+      <div><h3>Bosym Pvt Ltd</h3><address>2nd Floor A6, Manglavil Apartments, near Dream Flower Velvetude, 1 Temple Road, Koonamthai, Edappally, Kochi 682024</address><ul><li><a href="https://www.bosymcorp.com/">www.bosymcorp.com</a></li></ul></div>
+    </div>
+    <div class="foot-legal">
+      <img src="img/logo-gold-word.png" alt="De Bril" width="88" height="16" loading="lazy">
+      <p>All content © 2026 by Bosym® Pvt Ltd &amp; De Bril®. All rights reserved.</p>
+      <p class="pol"><a href="https://buydb.in/privacy-policy/">Privacy policy</a><a href="https://buydb.in/cookie-policy/">Cookie policy</a><a href="https://buydb.in/cookie-policy/">Cookie settings</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- 14 · Floating WhatsApp -->
+<a class="wa" href="https://wa.me/914843160620?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20De%20Bril%20frames" target="_blank" rel="noopener"><span class="wa-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></span>Chat on WhatsApp</a>
+
+<script src="site.js"></script>
+<script src="locate.js"></script>
+</body>
+</html>
