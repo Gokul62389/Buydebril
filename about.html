@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us · De Bril</title>
+<meta name="description" content="De Bril Eyewear: imported premium frames, curated for every face and made from materials of uncompromising quality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/best.webp" fetchpriority="high">
+<link rel="icon" href="img/logo-navy.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- 2 · Header: Menu on the left, logo centred, utilities on the right ending in a search icon -->
+<header class="head">
+  <div class="head-l">
+    <button class="hbtn" type="button" data-open="menu" aria-controls="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg><span>Menu</span></button>
+  </div>
+  <a class="logo" href="index.html" aria-label="De Bril, home"><img src="img/logo-gold-word.png" alt="De Bril" width="104" height="19"></a>
+  <nav class="head-r" aria-label="Quick links">
+    <a class="hlink" href="https://buydb.in/locate-us/" aria-label="Find a store"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 17.5s5.5-5 5.5-9.2a5.5 5.5 0 0 0-11 0c0 4.2 5.5 9.2 5.5 9.2Z"/><circle cx="10" cy="8.3" r="1.9"/></svg><span>Find a store</span></a>
+    <a class="hlink hide-s" href="https://buydb.in/contact-us/">Contact us</a>
+    <button class="ibtn" type="button" data-open="search" aria-controls="search" aria-expanded="false" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg></button>
+  </nav>
+</header>
+
+<!-- Menu drawer -->
+<div class="sheet sheet-l" id="menu" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="hbtn x" type="button" data-close><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg><span>Close</span></button>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html" aria-current="page">About us</a></li>
+        <li><a href="https://buydb.in/locate-us/">Find a store</a></li>
+        <li><a href="https://buydb.in/contact-us/">Contact us</a></li>
+      </ul>
+    </nav>
+    <p class="sheet-meta">+91 484 316 0620<br>main@bosymcorp.com</p>
+  </div>
+</div>
+
+<!-- Search: drops down from under the header in navy, searches the shop page -->
+<div class="sheet sheet-t" id="search" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="srch">
+      <form action="shop.html" method="get" role="search">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
+        <label for="q" class="vh">Search frames</label>
+        <input id="q" name="q" type="search" placeholder="Search frames" autocomplete="off" enterkeyhint="search">
+        <button class="ibtn x" type="button" data-close aria-label="Close search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+      </form>
+      <p class="srch-k">Popular searches</p>
+      <ul class="srch-pop"><li><a href="shop.html?q=1003">1003</a></li><li><a href="shop.html?q=Titanium">Titanium</a></li><li><a href="shop.html?q=TJ+837">TJ 837</a></li><li><a href="shop.html?q=Metal-TR">Metal-TR</a></li><li><a href="shop.html?q=HD+acetate">HD acetate</a></li><li><a href="shop.html?q=2-in-1">2-in-1</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="about-page">
+
+<!-- 1 · Opening: one big line, the client's own promise -->
+<section class="ab-head">
+  <p class="k">About De Bril</p>
+  <h1>Redefining <em>sophistication</em>, one frame at a time.</h1>
+  <p class="ab-lede">De Bril Eyewear brings together designers, artisans and optical experts who share one passion: frames that move past trends and stand the test of time.</p>
+</section>
+
+<!-- 2 · Wide image -->
+<figure class="ab-wide"><img src="img/best.webp" alt="Black and white portrait of a man in round frames" width="1438" height="1800" fetchpriority="high"></figure>
+
+<!-- 3 · Story: a statement on the left, the story on the right -->
+<section class="ab-story">
+  <h2>Every face is unique. Every frame should be too.</h2>
+  <div class="ab-story-copy">
+    <p>We offer an extensive collection of exclusive designs, curated to suit different face shapes and personal preferences, from a classic silhouette to a daring statement piece.</p>
+    <p>Every frame is imported and selected for De Bril, then fitted close to home at our stores across Kerala.</p>
+  </div>
+</section>
+
+<!-- 4 · Numbers from the live collection -->
+<section class="ab-nums" aria-label="The collection in numbers">
+  <div><b>88</b><span>Frames in the collection</span></div>
+  <div><b>10</b><span>Frame shapes</span></div>
+  <div><b>6</b><span>Materials</span></div>
+  <div><b>2-in-1</b><span>Optical frames with a magnetic sun clip</span></div>
+</section>
+
+<!-- 5 · Three things we stand for -->
+<section class="ab-pillars" aria-labelledby="ab-p-h">
+  <h2 id="ab-p-h" class="vh">What we stand for</h2>
+  <article>
+    <span class="ab-n">01</span>
+    <img src="img/premium.webp" alt="Woman in tortoiseshell cat-eye frames" width="1438" height="1800" loading="lazy">
+    <h3>Designed with care</h3>
+    <p>Designers, artisans and optical experts working together on frames made to last.</p>
+  </article>
+  <article>
+    <span class="ab-n">02</span>
+    <img src="img/still.webp" alt="Rose gold frames resting on linen" width="1440" height="1440" loading="lazy">
+    <h3>Uncompromising materials</h3>
+    <p>From acetates to lightweight metals and titanium, each chosen for durability, comfort and feel.</p>
+  </article>
+  <article>
+    <span class="ab-n">03</span>
+    <img src="img/cat-47E.webp" alt="De Bril frame on a stone surface" width="1200" height="1200" loading="lazy">
+    <h3>Curated for every face</h3>
+    <p>Shapes and sizes chosen so every face finds a frame that feels like its own.</p>
+  </article>
+</section>
+
+<!-- 6 · Materials, set in large type on navy -->
+<section class="ab-mats" aria-labelledby="ab-m-h">
+  <div class="ab-mats-head">
+    <p class="k">Materials</p>
+    <h2 id="ab-m-h">At the heart of every frame.</h2>
+  </div>
+  <ul><li>Acetate</li><li>HD Acetate</li><li>Metal</li><li>Metal-TR combination</li><li>TR 90</li><li>Titanium Metal</li></ul>
+</section>
+
+<!-- 7 · Close: mirrors the homepage 2-in-1 layout -->
+<section class="twoin ab-close" aria-labelledby="ab-c-h">
+  <div class="twoin-media"><img src="img/frames-studio.webp" alt="De Bril 1003 frame in black titanium on a navy stone slab" width="2400" height="1340" loading="lazy" style="object-position:70% 50%"></div>
+  <div class="twoin-copy">
+    <p class="k">The collection</p>
+    <h2 id="ab-c-h">Find yours.</h2>
+    <p class="twoin-sub">Explore the full range online, then try it on at a De Bril store.</p>
+    <div class="ab-ctas"><a class="btn btn-n" href="shop.html">Shop frames</a><a class="ul" href="https://buydb.in/locate-us/">Find a store</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- 11 · Footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div><h2>Client services</h2><p>Speak to us on <a href="tel:+914843160620">+91 484 316 0620</a>, or write to <a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a>.</p></div>
+      <a class="btn btn-sq" href="https://buydb.in/locate-us/">Find a store</a>
+    </div>
+    <div class="foot-cols">
+      <div><h3>Client services</h3><ul><li><a href="https://buydb.in/contact-us/">Contact us</a></li><li><a href="https://buydb.in/locate-us/">Find a store</a></li><li><a href="tel:+914843160620">+91 484 316 0620</a></li><li><a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a></li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+      <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/">Facebook</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="https://www.youtube.com/">YouTube</a></li></ul></div>
+      <div><h3>Bosym Pvt Ltd</h3><address>2nd Floor A6, Manglavil Apartments, near Dream Flower Velvetude, 1 Temple Road, Koonamthai, Edappally, Kochi 682024</address><ul><li><a href="https://www.bosymcorp.com/">www.bosymcorp.com</a></li></ul></div>
+    </div>
+    <div class="foot-legal">
+      <img src="img/logo-gold-word.png" alt="De Bril" width="88" height="16" loading="lazy">
+      <p>All content © 2026 by Bosym® Pvt Ltd &amp; De Bril®. All rights reserved.</p>
+      <p class="pol"><a href="https://buydb.in/privacy-policy/">Privacy policy</a><a href="https://buydb.in/cookie-policy/">Cookie policy</a><a href="https://buydb.in/cookie-policy/">Cookie settings</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- 14 · Floating WhatsApp -->
+<a class="wa" href="https://wa.me/914843160620?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20De%20Bril%20frames" target="_blank" rel="noopener"><span class="wa-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></span>Chat on WhatsApp</a>
+
+<script src="site.js"></script>
+</body>
+</html>
