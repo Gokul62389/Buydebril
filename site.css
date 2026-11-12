@@ -543,20 +543,27 @@ main>section.loc-hero{background:var(--deep)}
 .loc-map{position:sticky;top:72px;height:calc(100vh - 72px);background:var(--stone)}
 .loc-map iframe{width:100%;height:100%;border:0;filter:saturate(.7) contrast(1.02)}
 .smap-cap{position:absolute;right:16px;top:16px;max-width:min(360px,calc(100% - 32px));display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:14px 18px;background:var(--navy);color:var(--mist);box-shadow:0 10px 30px rgba(5,10,31,.25);font-size:14px}
-.smap-cap b{font-weight:500;color:#fff;width:100%}
+.smap-cap span{display:grid;gap:2px}
+.smap-cap b{font-weight:500;color:#fff}
 .smap-cap a{color:var(--gold);font-weight:500}
 .smap-cap:empty{display:none}
 .loc-help{border-top:1px solid var(--line)}
 @media (max-width:900px){
   .loc-body{grid-template-columns:1fr}
-  .loc-map{position:relative;top:auto;height:300px;order:-1}
-  .sg h2{top:60px}
+  .loc-map{position:sticky;top:72px;z-index:3;height:260px;order:-1;box-shadow:0 8px 20px rgba(5,10,31,.12)}
+  .sg h2{top:332px}
   .loc-hero::after{background:linear-gradient(to top,rgba(5,10,31,.92),rgba(5,10,31,.5) 55%,rgba(5,10,31,.1))}
   .dchips{flex-wrap:nowrap;overflow-x:auto;width:calc(100% + var(--pad));padding-right:var(--pad);scrollbar-width:none}
   .dchips button{flex:none}
 }
 @media (max-width:767px){
-  .loc-map{display:none} /* phones: the list comes first; each card has its own Directions link */
+  /* phones: a compact map stays under the header while the list scrolls; tapping a stockist moves the pin */
+  .loc-map{position:sticky;top:60px;z-index:3;height:220px;box-shadow:0 8px 20px rgba(5,10,31,.12)}
+  .sg h2{top:280px}
+  .smap-cap{top:auto;right:8px;left:8px;bottom:8px;max-width:none;flex-wrap:nowrap;align-items:center;gap:10px;padding:8px 8px 8px 12px;font-size:12px}
+  .smap-cap span{min-width:0}
+  .smap-cap b{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .smap-go{flex:none;margin-left:auto;padding:10px 12px;background:var(--gold);color:var(--navy)!important;font-size:12px;white-space:nowrap}
 }
 
 /* 18 · contact */

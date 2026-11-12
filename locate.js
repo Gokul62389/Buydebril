@@ -19,7 +19,7 @@ const show = i => {
   const s = ALL[i];
   const u = embed(s ? where(s) : 'Kerala, India');
   if (map.dataset.u !== u) { map.dataset.u = u; map.src = u; } // don't reload the map while typing
-  mapCap.innerHTML = s ? `<b>${esc(s.n)}</b>${esc(s.p)}, ${esc(s.d)} · <a href="${dir(s)}" target="_blank" rel="noopener">Open in Google Maps ↗</a>` : `<b>${ALL.length} opticians</b>across Kerala`;
+  mapCap.innerHTML = s ? `<span><b>${esc(s.n)}</b>${esc(s.p)}, ${esc(s.d)}</span><a class="smap-go" href="${dir(s)}" target="_blank" rel="noopener">Open in Google Maps ↗</a>` : `<span><b>${ALL.length} opticians</b>across Kerala</span>`;
 };
 
 const render = () => {
