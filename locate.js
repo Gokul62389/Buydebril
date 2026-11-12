@@ -58,7 +58,7 @@ q.addEventListener('input', render);
 $('#sq-form').addEventListener('submit', e => { e.preventDefault(); render(); toResults(); });
 $('#sreset').addEventListener('click', () => { q.value = ''; dist = ''; render(); q.focus(); });
 
-fetch('stores.json').then(r => r.json()).then(d => {
+fetch('stores.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
   ALL = d;
   const n = {}; d.forEach(s => { n[s.d] = (n[s.d] || 0) + 1; });
   const chip = (k, label, c) => `<button type="button" data-d="${esc(k)}" aria-pressed="false">${esc(label)} <span>${c}</span></button>`;

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frame · De Bril</title>
+<meta name="description" content="De Bril frame details: photos, shape, material and where to try it on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://buydb.in">
+<link rel="icon" href="img/logo-navy.png">
+<link rel="stylesheet" href="site.css?v=dafbb037">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- 2 · Header: Menu on the left, logo centred, utilities on the right ending in a search icon -->
+<header class="head">
+  <div class="head-l">
+    <button class="hbtn" type="button" data-open="menu" aria-controls="menu" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg><span>Menu</span></button>
+  </div>
+  <a class="logo" href="index.html" aria-label="De Bril, home"><img src="img/logo-gold-word.png" alt="De Bril" width="104" height="19"></a>
+  <nav class="head-r" aria-label="Quick links">
+    <a class="hlink" href="locate.html" aria-label="Find a store"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 17.5s5.5-5 5.5-9.2a5.5 5.5 0 0 0-11 0c0 4.2 5.5 9.2 5.5 9.2Z"/><circle cx="10" cy="8.3" r="1.9"/></svg><span>Find a store</span></a>
+    <a class="hlink hide-s" href="contact.html">Contact us</a>
+    <button class="ibtn" type="button" data-open="search" aria-controls="search" aria-expanded="false" aria-label="Search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg></button>
+  </nav>
+</header>
+
+<!-- Menu drawer -->
+<div class="sheet sheet-l" id="menu" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="hbtn x" type="button" data-close><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg><span>Close</span></button>
+    <nav aria-label="Main">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="locate.html">Find a store</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+    <p class="sheet-meta">+91 484 316 0620<br>main@bosymcorp.com</p>
+  </div>
+</div>
+
+<!-- Search: drops down from under the header in navy, searches the shop page -->
+<div class="sheet sheet-t" id="search" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="srch">
+      <form action="shop.html" method="get" role="search">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
+        <label for="q" class="vh">Search frames</label>
+        <input id="q" name="q" type="search" placeholder="Search frames" autocomplete="off" enterkeyhint="search">
+        <button class="ibtn x" type="button" data-close aria-label="Close search"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+      </form>
+      <p class="srch-k">Popular searches</p>
+      <ul class="srch-pop"><li><a href="shop.html?q=1003">1003</a></li><li><a href="shop.html?q=Titanium">Titanium</a></li><li><a href="shop.html?q=TJ+837">TJ 837</a></li><li><a href="shop.html?q=Metal-TR">Metal-TR</a></li><li><a href="shop.html?q=HD+acetate">HD acetate</a></li><li><a href="shop.html?q=2-in-1">2-in-1</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="pd-page">
+
+<article class="pd" id="pd">
+  <!-- Gallery: thumbnails + large photo with hover zoom, arrows and swipe -->
+  <div class="pd-gal">
+    <ul class="pd-thumbs" aria-label="Photos"></ul>
+    <div class="pd-stage" tabindex="0" aria-roledescription="gallery" aria-label="Frame photos, use the arrow keys to browse">
+      <img id="pd-img" src="" alt="" width="900" height="900">
+      <span class="badge pd-badge" id="pd-badge" hidden>2-in-1</span>
+      <button class="pd-arrow" type="button" data-dir="-1" aria-label="Previous photo"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+      <button class="pd-arrow" type="button" data-dir="1" aria-label="Next photo"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+      <p class="pd-count" id="pd-count"></p>
+    </div>
+  </div>
+
+  <!-- Details: stays in view while the gallery scrolls -->
+  <div class="pd-info">
+    <p class="k pd-kick" id="pd-kick"></p>
+    <h1 id="pd-h"></h1>
+    <p class="pd-col" id="pd-col"></p>
+    <p class="pd-lede" id="pd-lede"></p>
+
+    <section class="pd-cols" id="pd-cols" hidden aria-labelledby="pd-cols-h">
+      <h2 id="pd-cols-h">Colours</h2>
+      <ul></ul>
+    </section>
+
+    <div class="pd-acts">
+      <a class="btn btn-n pd-cta" id="pd-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5a7.5 7.5 0 0 0-6.4 11.4L2.5 17.5l3.7-1A7.5 7.5 0 1 0 10 2.5Z"/><path d="M7.5 7.2c.2 1.8 1.6 3.9 4.3 5 .5.2 1.2-.2 1.4-.8l.1-.5-1.6-.8-.6.7c-1-.4-1.9-1.3-2.3-2.3l.7-.6-.8-1.6-.5.1c-.6.2-1 .9-.7 1.4Z"/></svg>Enquire on WhatsApp</a>
+      <a class="btn pd-cta pd-cta-o" href="locate.html">Find a stockist</a>
+      <button class="pd-try" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5h3l1.5-2h5l1.5 2h3v9H3z"/><circle cx="10" cy="10.5" r="3"/></svg>Try it on with your camera <span>New</span></button>
+    </div>
+    <p class="pd-note">Prices and fitting at your optician. Call ahead to check this frame is in stock.</p>
+
+    <dl class="pd-spec" id="pd-spec"></dl>
+    <a class="pd-store" id="pd-store" href="#" target="_blank" rel="noopener">View on buydb.in ↗</a>
+  </div>
+</article>
+
+<div class="empty" id="pd-missing" hidden>
+  <h1>Frame not found</h1>
+  <p>This frame may have been renamed or is no longer in the collection.</p>
+  <a class="btn btn-n" href="shop.html">Browse all frames</a>
+</div>
+
+<!-- More of the same shape -->
+<section class="pd-more" id="pd-more" hidden>
+  <div class="prods-head"><h2>More frames</h2><a class="ul" id="pd-more-all" href="shop.html">View all</a></div>
+  <ul class="grid shop-grid pd-grid"></ul>
+</section>
+
+</main>
+
+<!-- 11 · Footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div><h2>Client services</h2><p>Speak to us on <a href="tel:+914843160620">+91 484 316 0620</a>, or write to <a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a>.</p></div>
+      <a class="btn btn-sq" href="locate.html">Find a store</a>
+    </div>
+    <div class="foot-cols">
+      <div><h3>Client services</h3><ul><li><a href="contact.html">Contact us</a></li><li><a href="locate.html">Find a store</a></li><li><a href="tel:+914843160620">+91 484 316 0620</a></li><li><a href="mailto:main@bosymcorp.com">main@bosymcorp.com</a></li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+      <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/">Facebook</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="https://www.youtube.com/">YouTube</a></li></ul></div>
+      <div><h3>Bosym Pvt Ltd</h3><address>2nd Floor A6, Manglavil Apartments, near Dream Flower Velvetude, 1 Temple Road, Koonamthai, Edappally, Kochi 682024</address><ul><li><a href="https://www.bosymcorp.com/">www.bosymcorp.com</a></li></ul></div>
+    </div>
+    <div class="foot-legal">
+      <img src="img/logo-gold-word.png" alt="De Bril" width="88" height="16" loading="lazy">
+      <p>All content © 2026 by Bosym® Pvt Ltd &amp; De Bril®. All rights reserved.</p>
+      <p class="pol"><a href="https://buydb.in/privacy-policy/">Privacy policy</a><a href="https://buydb.in/cookie-policy/">Cookie policy</a><a href="https://buydb.in/cookie-policy/">Cookie settings</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- 14 · Floating WhatsApp -->
+<a class="wa" href="https://wa.me/914843160620?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20De%20Bril%20frames" target="_blank" rel="noopener"><span class="wa-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></span>Chat on WhatsApp</a>
+
+<script src="site.js?v=21a2da18"></script>
+<script src="product.js?v=1062c5a2"></script>
+</body>
+</html>

@@ -54,11 +54,12 @@ const sorted = list => {
 /* ---------- rendering ---------- */
 const card = (it, k) => {
   const wa = 'https://wa.me/914843160620?text=' + encodeURIComponent(`Hello, I'd like to know more about the De Bril ${it.m} (${it.c}).`);
+  const pu = `product.html?p=${encodeURIComponent(it.id)}`;
   return `<li class="card" style="--i:${k % PAGE}">
-    <div class="ph"><a class="ph-a" href="${it.u}" tabindex="-1" aria-hidden="true"><img src="${it.i[0]}" alt="" width="450" height="450" loading="lazy">${it.i[1] ? `<img class="alt" src="${it.i[1]}" alt="" width="450" height="450" loading="lazy">` : ''}</a>
+    <div class="ph"><a class="ph-a" href="${pu}" tabindex="-1" aria-hidden="true"><img src="${it.i[0]}" alt="" width="450" height="450" loading="lazy">${it.i[1] ? `<img class="alt" src="${it.i[1]}" alt="" width="450" height="450" loading="lazy">` : ''}</a>
       ${it.two ? '<span class="badge">2-in-1</span>' : ''}
-      <div class="cta"><a class="cta-v" href="${it.u}" aria-label="View ${esc(it.m)}, ${esc(it.c)}">View frame <i aria-hidden="true">→</i></a><a class="cta-w" href="${wa}" target="_blank" rel="noopener" aria-label="Enquire about ${esc(it.m)}, ${esc(it.c)} on WhatsApp">Enquire</a></div></div>
-    <a class="tx" href="${it.u}"><b>${esc(it.m)}</b><span>${esc(it.c)}</span><small>${esc(it.sh)} · ${esc(it.mt)}</small><em class="tx-more" aria-hidden="true">View frame →</em></a></li>`;
+      <div class="cta"><a class="cta-v" href="${pu}" aria-label="View ${esc(it.m)}, ${esc(it.c)}">View frame <i aria-hidden="true">→</i></a><a class="cta-w" href="${wa}" target="_blank" rel="noopener" aria-label="Enquire about ${esc(it.m)}, ${esc(it.c)} on WhatsApp">Enquire</a></div></div>
+    <a class="tx" href="${pu}"><b>${esc(it.m)}</b><span>${esc(it.c)}</span><small>${esc(it.sh)} · ${esc(it.mt)}</small><em class="tx-more" aria-hidden="true">View frame →</em></a></li>`;
 };
 
 const facets = () => {
@@ -139,7 +140,7 @@ $$('[data-fclose]').forEach(b => b.addEventListener('click', () => { setPanel(fa
 panel.addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('is-open')) { setPanel(false); opener.focus(); } });
 
 /* ---------- go ---------- */
-fetch('catalog.json').then(r => r.json()).then(d => {
+fetch('catalog.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
   ALL = d; read(); buildFilters(); render();
   $('#q').value = st.q;
 }).catch(() => { count.textContent = 'Frames could not be loaded.'; });

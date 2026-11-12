@@ -29,9 +29,13 @@ const LISTS = {
   reviews: ['67A', '59A', '47A', '62A', '61E', '48A', '58A', '60A'],
   seasonal: ['62A', '60A', '63A', '67A', '58A', '49A', '59E', '61E'],
 };
+// homepage photos are named after the store's upload ids; map them to catalog.json slugs
+const SLUG = { '59A': 'tj-837-black-rg', '61A': 'tr-zc-808-black-rg', '63A': 'tr-zc-809-choko-rg', '58A': 'tr-p-5029-clear-balck', '47A': '1003-black-titanium',
+  '48A': '1003-black-titanium-rg', '49A': '1003-black-titanium-s', '60A': 'tj-837-green-s', '62A': 'tr-zc-808-pink-rg', '67A': '2052-brown-tiger-gold',
+  '59E': 'tj-837-black-rg', '61E': 'tr-zc-808-black-rg' };
 const card = id => {
   const [n, c, m] = P[id];
-  const url = `https://buydb.in/?s=${encodeURIComponent(n)}&post_type=product`;
+  const url = `product.html?p=${SLUG[id]}`;
   const wa = 'https://wa.me/914843160620?text=' + encodeURIComponent(`Hello, I'd like to know more about the De Bril ${n} (${c}).`);
   // photo link is a mouse shortcut only; keyboard users get the name link + the two CTA buttons
   return `<li class="card">

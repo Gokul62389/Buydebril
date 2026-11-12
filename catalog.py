@@ -22,6 +22,8 @@ for p in src:
     a1 = lambda k: (attrs.get(k) or [''])[0]
     ims = list(dict.fromkeys(i['thumbnail'] for i in p['images']))
     out.append({
+        'id': p['permalink'].rstrip('/').rsplit('/', 1)[-1],
+        'f': list(dict.fromkeys(i['src'] for i in p['images']))[:8],
         'm': ' '.join(toks[:last + 1]),
         'c': ' '.join(toks[last + 1:]) or '—',
         'u': p['permalink'],
